@@ -4,7 +4,6 @@ const { Client } = require("pg");
 require("dotenv").config();
 
 const SQL = `
-
 CREATE TABLE IF NOT EXISTS users (
     id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     first_name VARCHAR ( 50 ),
@@ -50,14 +49,12 @@ VALUES
 (3, 3),
 (1, 4),
 (4, 2);
-
-
 `;
 
 async function main() {
     console.log("seeding...");
     const client = new Client({
-        connectionString: process.env.DB_CONNECTION_STRING
+        connectionString: process.env.DB_CONNECTION_STRING,
     });
     await client.connect();
     await client.query(SQL);

@@ -43,9 +43,14 @@ app.listen(process.env.PORT ?? PORT, (error) => {
 
 app.use((err, req, res, next) => {
     console.error(err);
-    res.status(err.statusCode || 500).render("errorPages/errorPage", { errorMessage: err.message });
+    res.status(err.statusCode || 500).render("errorPages/errorPage", {
+        errorMessage: err.message,
+    });
 });
 
 app.use((req, res) => {
-    res.status(404).render('errorPages/404', { title: '404', pageURL: req.path});
-})
+    res.status(404).render("errorPages/404", {
+        title: "404",
+        pageURL: req.path,
+    });
+});

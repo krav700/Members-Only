@@ -10,10 +10,7 @@ async function getMessages() {
 }
 
 async function approveAdminStatus(userId) {
-    await pool.query(
-        `UPDATE users SET admin = true WHERE id = $1;`,
-        [userId],
-    );
+    await pool.query(`UPDATE users SET admin = true WHERE id = $1;`, [userId]);
 }
 
 async function approveMembership(userId) {
@@ -24,7 +21,7 @@ async function approveMembership(userId) {
 }
 
 async function insertMessage(message, userId) {
-    const { rows:newMessageId} = await pool.query(
+    const { rows: newMessageId } = await pool.query(
         `INSERT INTO messages(content) VALUES ($1) RETURNING id;`,
         [message],
     );
@@ -46,5 +43,5 @@ module.exports = {
     insertMessage,
     deleteMessage,
     approveAdminStatus,
-    approveMembership
+    approveMembership,
 };

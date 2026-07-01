@@ -1,26 +1,26 @@
 {
-  "name": "members-only",
-  "version": "1.0.0",
-  "description": "An anonymous messaging platform where anyone can read posted messages, but only authenticated users can create messages and view the identities of message senders.",
-  "main": "app.js",
-  "type": "commonjs",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app --watch",
-    "dropDB": "node db/dropDB",
-    "populateDB": "node db/populateDB && psql 'postgresql://neondb_owner:npg_j4yZu3kaSUDv@ep-autumn-resonance-atp9lc0f-pooler.c-9.us-east-1.aws.neon.tech/neondb?sslrootcert=system&channel_binding=require' < node_modules/connect-pg-simple/table.sql"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "connect-pg-simple": "^10.0.0",
-    "dotenv": "^17.4.2",
-    "ejs": "^5.0.2",
-    "express": "^5.2.1",
-    "express-session": "^1.19.0",
-    "express-validator": "^7.3.2",
-    "passport": "^0.7.0",
-    "passport-local": "^1.0.0",
-    "pg": "^8.20.0"
-  }
+    "name": "members-only",
+    "version": "1.0.0",
+    "description": "An anonymous messaging platform where anyone can read posted messages, but only authenticated users can create messages and view the identities of message senders.",
+    "main": "app.js",
+    "type": "commonjs",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node app --watch",
+        "dropDB": "node db/dropDB",
+        "populateDB": "node db/populateDB && psql 'postgresql://neondb_owner:npg_j4yZu3kaSUDv@ep-autumn-resonance-atp9lc0f-pooler.c-9.us-east-1.aws.neon.tech/neondb?sslrootcert=system&channel_binding=require' < node_modules/connect-pg-simple/table.sql"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "connect-pg-simple": "^10.0.0",
+        "dotenv": "^17.4.2",
+        "ejs": "^5.0.2",
+        "express": "^5.2.1",
+        "express-session": "^1.19.0",
+        "express-validator": "^7.3.2",
+        "passport": "^0.7.0",
+        "passport-local": "^1.0.0",
+        "pg": "^8.20.0"
+    }
 }

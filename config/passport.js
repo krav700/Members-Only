@@ -20,7 +20,12 @@ const verifyCallback = async (username, password, done) => {
             return done(null, false, { message: "Incorrect username" });
         }
 
-        const isValid = validPassword(password, user.hash, user.salt, user.iteration_count);
+        const isValid = validPassword(
+            password,
+            user.hash,
+            user.salt,
+            user.iteration_count,
+        );
 
         if (isValid) {
             return done(null, user);
@@ -38,14 +43,15 @@ passport.use(strategy);
 
 passport.serializeUser((user, done) => {
     done(null, user.id);
-})
+});
 
 passport.deserializeUser(async (userId, done) => {
     try {
-        const user = await pool.query(`SELECT * FROM users WHERE id = $1`, [userId])
+        const user = await pool.query(`SELECT * FROM users WHERE id = $1`, [
+            userId,
+        ]);
         done(null, user.rows[0]);
     } catch (err) {
         done(err);
     }
-
-})
+});

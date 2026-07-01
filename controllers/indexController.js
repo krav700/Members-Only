@@ -80,7 +80,7 @@ const validateRegister = [
         .custom((value, { req }) => {
             return value === req.body.password;
         })
-        .withMessage("Confirm Password does not match Password.")
+        .withMessage("Confirm Password does not match Password."),
 ];
 
 async function getMessages(req, res) {

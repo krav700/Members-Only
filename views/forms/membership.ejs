@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
     <%- include("../partials/head") %>
-<body>
-    <%- include("../partials/errors") %>
-    <h1>Membership Approoval</h1>
-    <div class="auth-form">
-        <form method="post" action="/prooveMembership">
-            <div class="auth-input">
-                <label for="membership-password">Membership Password:</label>
-                <input name="membership-password" id="membership-password" />
-            </div>
-            <button>Submit</button>
-        </form>
-    </div>
-</body>
+    <body>
+        <%- include("../partials/errors") %>
+        <h1>Membership Approoval</h1>
+        <div class="auth-form">
+            <form method="post" action="/prooveMembership">
+                <div class="auth-input">
+                    <label for="membership-password"
+                        >Membership Password:</label
+                    >
+                    <input
+                        name="membership-password"
+                        id="membership-password"
+                    />
+                </div>
+                <button>Submit</button>
+            </form>
+        </div>
+    </body>
 </html>

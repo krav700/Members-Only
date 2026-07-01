@@ -22,5 +22,4 @@ indexRouter.get("/register", indexController.getRegisterForm);
 
 indexRouter.post("/logout", indexController.logoutUser);
 
-
 module.exports = indexRouter;
