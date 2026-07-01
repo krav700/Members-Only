@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("../partials/head") %>
+<body>
+    <%- include("../partials/errors") %>
+    <h1>Login</h1>
+    <div class="auth-form">
+        <form method="post" action="/login">
+            <div class="auth-input">
+                <label for="username">Username:</label>
+                <input name="username" id="username" value="<% locals.username %>" />
+            </div>
+
+            <div class="auth-input">
+                <label for="password">Password:</label>
+                <input name="password" id="password" type="password" value="<% locals.password %>"/>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

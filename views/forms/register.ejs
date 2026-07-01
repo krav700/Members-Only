@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("../partials/head") %>
+    <body>
+        <%- include("../partials/errors") %>
+        <h1>Register</h1>
+        <div class="auth-form">
+            <form method="post" action="/register">
+                <div class="auth-input">
+                <label for="first-name">First Name:</label>
+                <input name="first-name" id="first-name" value="<% locals.firstName %>" />
+                </div>
+                <div class="auth-input">
+                <label for="last-name">Last Name:</label>
+                <input name="last-name" id="last-name" value="<% locals.lastName %>" />
+                </div>
+                <div class="auth-input">
+                <label for="username">Username:</label>
+                <input name="username" id="username" value="<% locals.username %>" />
+                </div>
+                <div class="auth-input">
+                <label for="password">Password:</label>
+                <input name="password" id="password" type="password" value="<% locals.password %>" />
+                </div>
+                <div class="auth-input">
+                <label for="confirm-password">Confirm Password:</label>
+                <input name="confirm-password" id="confirm-password" type="password" value="<% locals.confirmPassword %>" />
+                </div>
+                <button>Submit</button>
+            </form>
+        </div>
+    </body>
+</html>
